@@ -24,26 +24,8 @@
 
 ```mermaid
 graph LR
-    subgraph "Input"
-        A[News RSS]
-        B[Finance Data]
-    end
-
-    subgraph "Processing (GAS)"
-        C{Automation Bot}
-        C1[<b>Data Sync</b><br/>Flush & Sleep]
-        C2[<b>TTS Opt</b><br/>Sentence Refinement]
-        C --> C1 --> C2
-    end
-
-    subgraph "Output"
-        D[Google Calendar]
-        E[Google Nest Mini]
-    end
-
-    A & B --> C
-    C2 --> D
-    D --> E
+    A[<b>Input Data Sources</b><br/>News & Finance] --> B{<b>Logic (GAS)</b><br/>Sync & Processing}
+    B --> C[<b>Output</b><br/>Calendar & Speaker]
 ```
 <br>
 
