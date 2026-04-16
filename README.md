@@ -24,8 +24,8 @@
 
 ```mermaid
 graph LR
-    A[<b>Input Data Sources</b><br/>News & Finance] --> B{<b>Logic (GAS)</b><br/>Sync & Processing}
-    B --> C[<b>Output</b><br/>Calendar & Speaker]
+    A["<b>Input Data Sources</b><br/>News 'and' Finance"] --> B["<b>Logic (GAS)</b><br/>Sync 'and' Processing"]
+    B --> C["<b>Output</b><br/>Nest Mini Speaker"]
 ```
 <br>
 
