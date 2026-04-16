@@ -1,4 +1,4 @@
-// Google Spread Sheet → 확장 프로그램 → Apps Script 에서 사용.
+//  [ Google Spread Sheet → 확장 프로그램 → Apps Script ]  //
 
 function morningRoutineFinal() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
