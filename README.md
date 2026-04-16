@@ -8,15 +8,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=flat&logo=google-apps-script&logoColor=white)](https://developers.google.com/apps-script)
 
-**Google Apps Script(GAS)**를 활용하여 매일 아침 구글 네스트 미니를 통해 개인화된 브리핑을 제공합니다. 뉴스 RSS와 Google Finance의 실시간 데이터를 가공하여 구글 캘린더에 등록함으로써, 별도의 화면 확인 없이 음성으로만 주요 정보를 파악할 수 있습니다.
+Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를 통해 개인화된 브리핑을 제공합니다. 뉴스 RSS와 Google Finance의 실시간 데이터를 가공하여 구글 캘린더에 등록함으로써, 별도의 화면 확인 없이 음성으로만 주요 정보를 파악할 수 있습니다.
 
 ---
 
 ## 🛠️ Tech Stack (기술 스택)
-- Language: JavaScript (Google Apps Script)
-- Platform: Google Cloud Infrastructure
-- Integrations: Google Spreadsheet API, Google Calendar API, Google Finance API
-- Hardware: Google Nest Mini (Google Home Ecosystem)
+- Language : JavaScript (Google Apps Script)
+- Platform : Google Cloud Infrastructure
+- Integrations : Google Spreadsheet API, Google Calendar API, Google Finance API
+- Hardware : Google Nest Mini (Google Home Ecosystem)
 
 ---
 
@@ -45,12 +45,11 @@ graph LR
     C2 --> D
     D --> E
 ```
-<br>
 
 ### 💡 흐름도 설명
-* **Input**: 실시간 뉴스 및 지표 수집
-* **Process**: Google Apps Script를 통한 문장 최적화 및 자동화
-* **Output**: 구글 캘린더 동기화 및 네스트 미니 음성 출력
+* **Input** : 실시간 뉴스 및 지표 수집
+* **Process** : Google Apps Script를 통한 문장 최적화 및 자동화
+* **Output** : 구글 캘린더 동기화 및 네스트 미니 음성 출력
 
 ---
 
