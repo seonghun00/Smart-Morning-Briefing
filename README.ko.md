@@ -4,7 +4,7 @@
 
 ##### [English](README.md) | 한국어
 
-# 🤖 경제 뉴스 요약 자동화
+# 🤖 경제 뉴스 요약 자동화 봇
 > **Google Nest Mini 연동 아침 경제 뉴스 및 시장 지표 브리핑 자동화 시스템**
 
 <p align="left">
