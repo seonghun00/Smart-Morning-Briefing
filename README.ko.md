@@ -26,6 +26,15 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 
 ---
 
+## 📁 Project Structure
+```text
+├── src/Code.gs         // 메인 코드
+├── images/             // 진행 및 결과 사진
+└── README.md          
+```
+
+---
+
 ## 🔄 시스템 흐름도
 
 <p align="center">
