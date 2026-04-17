@@ -18,7 +18,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 
 ---
 
-## 🛠️ Tech Stack (기술 스택)
+## 🛠️ 주요 기술
 - Language : JavaScript (Google Apps Script)
 - Platform : Google Cloud Infrastructure
 - Integrations : Google Spreadsheet API, Google Calendar API, Google Finance API
@@ -26,7 +26,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 
 ---
 
-## 🔄 Workflow (시스템 흐름도)
+## 🔄 시스템 흐름도
 
 <p align="center">
  <img src="./images/workflow.PNG" width="100%" alt="시트 실행 결과">
@@ -41,7 +41,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 
 ---
 
-## 🖥️ Execution Result (시트 실행 결과)
+## 🖥️ 시트 실행 결과
 
 <p align="center">
   <img src="./images/googlesheet_result.PNG" width="100%" alt="시트 실행 결과">
@@ -65,7 +65,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 
 ---
 
-## 💻 Configuration (환경 설정)
+## 💻 환경 설정
 
 사용자는 `Code.gs` 상단의 `CONFIG` 객체만 수정하여 시스템을 커스터마이징할 수 있습니다.
 
