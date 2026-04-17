@@ -22,7 +22,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 
 ## 🔄 Workflow (시스템 흐름도)
 
-![Morning Routine Flow](./images/workflow.png)
+![Morning Routine Flow](./images/workflow.PNG)
 
 ### 💡 흐름도 설명
 * **Input** : 실시간 뉴스 및 지표 수집
