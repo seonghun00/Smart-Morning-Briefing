@@ -77,6 +77,7 @@ const CONFIG = {
   SHEET_ID: "Paste your Google Sheet ID here",     // Google Sheet url (~spreadsheets/d/(** This is the Google Sheet ID **)/edit?~)
   RSS_URL: 'https://kr.investing.com/rss/news_285.rss',   // Investing.com RSS address
 ...
+```
 
 ---
 
