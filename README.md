@@ -25,7 +25,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 <p align="center">
  <img src="./images/workflow.PNG" width="100%" alt="시트 실행 결과">
   <br>
-  <em>전체적인 시스템 흐름도</em>
+  <sub><em>▲ 전체적인 시스템 흐름도</em></sub>
 </p>
 
 ### 💡 흐름도 설명
@@ -40,7 +40,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 <p align="center">
   <img src="./images/googlesheet_result.PNG" width="100%" alt="시트 실행 결과">
   <br>
-  <em>스크립트 실행 후 데이터가 자동으로 기록된 스프레드시트 화면</em>
+  <sub><em>▲ 스크립트 실행 후 데이터가 자동으로 기록된 스프레드시트 화면</em></sub>
 </p>
 
 | 셀 위치 | 주요 내용 | 상세 설명 |
@@ -54,7 +54,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 <p align="center">
   <img src="./images/googlecalendar_result.PNG" width="100%" alt="구글 캘린더 일정 연동 결과">
   <br>
-  <em>구글 캘린더에 '종일 일정'으로 등록된 최종 브리핑 본문 화면</em>
+  <sub><em>▲ 구글 캘린더에 '종일 일정'으로 등록된 최종 브리핑 본문 화면</em></sub>
 </p>
 
 ---
