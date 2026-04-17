@@ -65,14 +65,13 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 
 ```javascript
 /**
- * Line 4: Configuration Section
+ * Line 12: 사용자 구글 시트 ID
  */
+...
 const CONFIG = {
-  RSS_URL: '[https://kr.investing.com/rss/news_285.rss](https://kr.investing.com/rss/news_285.rss)',
-  NEWS_COUNT: 3,
-  TIME_ZONE: "GMT+9",
-  CALENDAR_ID: null // 특정 캘린더 ID를 넣거나, 기본 캘린더 사용 시 null 유지
-};
+  SHEET_ID: "구글 시트 고유 ID 여기 넣으시오",                 // 구글 시트 고유 ID (~spreadsheets/d/(여기가 구글 시트 ID)/edit?~)
+  RSS_URL: 'https://kr.investing.com/rss/news_285.rss',      // 투자 뉴스 RSS 주소
+...
 ```
 
 ---
