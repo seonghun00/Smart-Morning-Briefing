@@ -22,7 +22,11 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 
 ## 🔄 Workflow (시스템 흐름도)
 
-![Morning Routine Flow](./images/workflow.PNG)
+<p align="center">
+  <img src="./images/workflow.PNG" width="100%" alt="시트 실행 결과">
+  <br>
+  <em>전체적인 시스템 흐름도</em>
+</p>
 
 ### 💡 흐름도 설명
 * **Input** : 실시간 뉴스 및 지표 수집
@@ -34,7 +38,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 ## 🖥️ Execution Result (시트 실행 결과)
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/9769ae23-4860-4864-b852-967114ff4659" width="100%" alt="시트 실행 결과">
+  <img src="./images/googlesheet_result.PNG" width="100%" alt="시트 실행 결과">
   <br>
   <em>스크립트 실행 후 데이터가 자동으로 기록된 스프레드시트 화면</em>
 </p>
@@ -48,7 +52,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
 <br>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/24518300-9df9-4dc8-8d2c-566737dbe401" width="100%" alt="구글 캘린더 일정 연동 결과">
+  <img src="./images/googlecalendar_result.PNG" width="100%" alt="구글 캘린더 일정 연동 결과">
   <br>
   <em>구글 캘린더에 '종일 일정'으로 등록된 최종 브리핑 본문 화면</em>
 </p>
