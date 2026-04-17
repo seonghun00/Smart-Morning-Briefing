@@ -84,7 +84,7 @@ Google Apps Script(GAS)를 활용하여 매일 아침 구글 네스트 미니를
  */
 ...
 const CONFIG = {
-  SHEET_ID: "구글 시트 고유 ID 여기 넣으시오",                 // 구글 시트 고유 ID (~spreadsheets/d/(여기가 구글 시트 ID)/edit?~)
+  SHEET_ID: "구글 시트 고유 ID 여기 넣으시오",                 // 구글 시트 url (~spreadsheets/d/(여기가 구글 시트 ID)/edit?~)
   RSS_URL: 'https://kr.investing.com/rss/news_285.rss',      // 투자 뉴스 RSS 주소
 ...
 ```
