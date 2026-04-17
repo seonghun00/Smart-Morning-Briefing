@@ -1,62 +1,68 @@
 //  [ Google Spread Sheet → 확장 프로그램 → Apps Script ]  //
 
+/**
+ * 스마트 아침 브리핑 시스템
+ * 기능: 뉴스 수집 + 금융 지표 계산 + 구글 캘린더 등록
+ */
+
 function morningRoutineFinal() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ss.getActiveSheet();
+  const SHEET_ID = "10aW7SRntEYaFqiUQKzzKbTWN337_cFNybxRg5vc8w8s"; // 사용자 시트 ID
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  const sheet = ss.getSheets()[0];
   const TODAY_DATE = Utilities.formatDate(new Date(), "GMT+9", "yyyy-MM-dd");
   
   try {
-    sheet.clear(); 
+    sheet.clear(); // 1. 시트 초기화
 
-    // 1. 뉴스 데이터 수집
+    // 2. 뉴스 데이터 수집 (인베스팅닷컴 RSS)
     const RSS_URL = 'https://kr.investing.com/rss/news_285.rss';
     const response = UrlFetchApp.fetch(RSS_URL);
     const xml = response.getContentText();
     const document = XmlService.parse(xml);
     const newsItems = document.getRootElement().getChild('channel').getChildren('item').slice(0, 3);
     
+    // 뉴스 제목 조립 (구글 홈이 읽기 좋게 "N번 뉴스, 제목" 형식으로 생성)
     let newsArray = newsItems.map((item, index) => `${index + 1}번 뉴스, ${item.getChildText('title')}`);
-    const combinedNews = newsArray.join(". ") + ". ";
+    const combinedNews = "오늘의 주요 뉴스입니다. " + newsArray.join(". ") + ". ";
 
-    // 2. 시장 지표 수식 조립
+    // 3. 시장 지표 수식 조립 (구글 파이낸스 활용)
     const financeFormula = `= "이어서 오늘 시장 지표입니다. " & 
       IFERROR("나스닥은 " & FIXED(ABS((GOOGLEFINANCE("INDEXNASDAQ:.IXIC", "price")-GOOGLEFINANCE("INDEXNASDAQ:.IXIC", "closeyest"))/GOOGLEFINANCE("INDEXNASDAQ:.IXIC", "closeyest")*100), 1) & "퍼센트 " & IF((GOOGLEFINANCE("INDEXNASDAQ:.IXIC", "price")-GOOGLEFINANCE("INDEXNASDAQ:.IXIC", "closeyest"))>=0, "상승한 ", "하락한 ") & TEXT(ROUND(GOOGLEFINANCE("INDEXNASDAQ:.IXIC", "price")), "#,##0") & "포인트이고, ", "나스닥 확인 불가, ") & 
       IFERROR("코스피는 " & FIXED(ABS((GOOGLEFINANCE("KRX:KOSPI", "price")-GOOGLEFINANCE("KRX:KOSPI", "closeyest"))/GOOGLEFINANCE("KRX:KOSPI", "closeyest")*100), 1) & "퍼센트 " & IF((GOOGLEFINANCE("KRX:KOSPI", "price")-GOOGLEFINANCE("KRX:KOSPI", "closeyest"))>=0, "상승한 ", "하락한 ") & TEXT(ROUND(GOOGLEFINANCE("KRX:KOSPI", "price")), "#,##0") & "포인트입니다.", "코스피 확인 불가입니다.")`;
 
-    // 3. 메인 시트에 기록
+    // 4. 시트에 데이터 기록
     sheet.getRange("A1").setValue(TODAY_DATE);
     sheet.getRange("B1").setValue(newsArray[0]);
     sheet.getRange("B2").setValue(newsArray[1]);
     sheet.getRange("B3").setValue(newsArray[2]);
     sheet.getRange("B4").setFormula(financeFormula);
     
+    // 수식이 계산되어 텍스트로 변환될 때까지 강제 동기화 및 대기
     SpreadsheetApp.flush();
-    Utilities.sleep(2000);
+    Utilities.sleep(5000); // 5초 대기 (데이터 로딩 시간 확보)
 
-    // 4. 전체 브리핑 문장 생성
+    // 5. 전체 브리핑 문장 생성
     const marketInfo = sheet.getRange("B4").getValue();
-    const finalBriefing = "오늘의 브리핑입니다. " + combinedNews + marketInfo + " 오늘도 좋은 하루 되세요!";
+    const finalBriefing = combinedNews + marketInfo + " 오늘도 좋은 하루 되세요!";
 
-    // 5. 캘린더 등록 (종일 일정으로 변경)
+    // 6. 구글 캘린더 등록 (중복 방지 로직 포함)
     const calendar = CalendarApp.getDefaultCalendar();
     const now = new Date();
 
-    // 중복 방지: 오늘 날짜의 '모든 종일 일정' 중 브리핑 내용이 포함된 것 삭제
     const events = calendar.getEventsForDay(now);
     events.forEach(event => {
-      if (event.isAllDayEvent() && event.getTitle().includes("오늘의 브리핑입니다")) {
+      if (event.getTitle().includes("안녕하세요")) {
         event.deleteEvent();
       }
     });
 
-    // 새 종일 일정 생성
+    // 종일 일정으로 등록 (구글 홈 루틴이 '오늘 일정 알려줘' 할 때 읽어줌)
     calendar.createAllDayEvent(finalBriefing, now);
 
-    sheet.autoResizeColumn(1);
-    sheet.autoResizeColumn(2);
-    Logger.log("✅ 종일 일정으로 브리핑 등록 완료!");
+    sheet.autoResizeColumns(1, 2);
+    Logger.log("✅ [성공] 기본 브리핑 등록 완료!");
 
   } catch (e) {
-    Logger.log("❌ 오류 발생: " + e.toString());
+    Logger.log("❌ [오류] " + e.toString());
   }
 }
