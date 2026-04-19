@@ -11,6 +11,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=flat&logo=opensourceinitiative&logoColor=white"></a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black"></a>
   <a href="https://developers.google.com/apps-script"><img src="https://img.shields.io/badge/Google_Apps_Script-4285F4?style=flat&logo=google-apps-script&logoColor=white"></a>
+  <a href="https://www.google.com/sheets/about/"><img src="https://img.shields.io/badge/Google_Sheets-34A853?style=flat&logo=google-sheets&logoColor=white"></a>
 </p>
 
 This project automates personalized briefings via Google Nest Mini using Google Apps Script (GAS). It processes real-time data from News RSS and Google Finance to register events in Google Calendar, allowing users to stay informed through voice without checking screens.
